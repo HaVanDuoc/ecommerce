@@ -1,0 +1,179 @@
+.navbar {
+    width: 100vw;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: var(--navbar-background);
+    color: var(--navbar-color);
+    transition: display 0.3s ease;
+
+    // Menu
+    .navbarMenu {
+        display: none;
+    }
+
+    @media screen and (max-width: 900px) {
+        .navbarMenu {
+            display: block;
+        }
+    }
+
+    // Brand
+    .brand {
+        font-size: 40px;
+        font-weight: 500;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    // NavList
+    .navList {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 20px;
+
+        .item {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    }
+
+    // SearchBar
+    .searchBar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .input {
+            width: 280px;
+            line-height: 30px;
+            font-size: 1.6rem;
+            padding: 10px 60px 10px 10px;
+            outline: none;
+            border-radius: 5px;
+            border: none;
+            color: var(--navbar-background);
+            transition: all .3s ease;
+        }
+
+        .buttonSubmit {
+            position: absolute;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: var(--navbar-background);
+            border-radius: 5px;
+        }
+    }
+
+    // Responsive SearchBar
+    @media screen and (max-width: 1200px) {
+        .searchBar {
+            .input {
+                padding: 10px;
+                width: 50px;
+                color: transparent;
+                position: absolute;
+                right: 0;
+                border: 1px solid var(--navbar-background);
+            }
+
+            .buttonSubmit {
+                background-color: var(--navbar-color);
+                color: var(--navbar-background);
+            }
+
+            &:hover {
+                .input {
+                    padding: 10px 60px 10px 10px;
+                    width: 280px;
+                    color: var(--navbar-color);
+                    background-color: var(--navbar-background);
+                    display: block;
+                    position: absolute;
+                    // transform: translateY(70px);
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 3rem;
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        border-bottom: 10px solid var(--navbar-background);
+                        transform: translateY(-100%);
+                    }
+
+                    &:first-child{
+                        padding-top: 10px;
+                        transform: translateY(100%);
+                    }
+                }
+
+                .buttonSubmit {
+                    color: var(--navbar-color);
+                    background-color: var(--navbar-background);
+                }
+            }
+        }
+    }
+
+    .navBarRight {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .loginButton {
+            cursor: pointer;
+        }
+
+    }
+
+    #checkMenu {
+        display: none;
+
+        &:checked~.navListMenuOn {
+            transform: translate(-100%, calc(-100% + var(--navbar-height)));
+        }
+    }
+
+    .navListMenuOn {
+        position: absolute;
+        top: var(--navbar-height);
+        left: 0;
+        background-color: var(--navbar-background);
+        width: 100vw;
+        height: auto;
+        transition: transform .3s ease;
+
+        .item {
+            line-height: 40px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 3px 5px 10px 5px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .navbar {
+
+        .searchBar,
+        .navList,
+        .loginButton {
+            display: none;
+        }
+    }
+}
