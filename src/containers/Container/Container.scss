@@ -1,0 +1,20 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: all .3s ease;
+}
+
+@media screen and (max-width: 1200px) {
+    .container{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container{
+        justify-content: space-between;
+    }
+}

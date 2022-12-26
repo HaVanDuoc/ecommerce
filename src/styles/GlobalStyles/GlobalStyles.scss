@@ -1,0 +1,30 @@
+:root{
+    --navbar-background: #1B1E67;
+    --navbar-color: #f0f0f0;
+    --navbar-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    font-family: 'Roboto', sans-serif;
+}
+
+input {
+    outline: none;
+}
+
+svg{
+    font-size: 2.1875rem !important;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import DefaultLayout from "./layouts/DefaultLayout";
+import { NoLayout } from "./layouts";
 import { publicRoutes } from "./routes";
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           {publicRoutes.map((route, index) => {
-            const Layout = route.layout || DefaultLayout;
+            const Layout = route.layout || NoLayout;
             const Page = route.page;
 
             return (

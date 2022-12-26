@@ -1,4 +1,4 @@
-import "./GlobalStyle.scss";
+import "./GlobalStyles.scss";
 
 const GlobalStyle = ({ children }) => {
   return children;
